@@ -5,10 +5,12 @@ global:
   # will enable or disable all the components within this chart by default.
   # Each component can be overridden using the component-specific "enabled"
   # value.
-  enabled: true
+  enabled: false
+
+  consul_ip: 0.0.0.0
 
   # Domain to register the Consul DNS server to listen for.
-  domain: consul
+  domain: consul.service
 
   # Image is the name (and tag) of the Consul Docker image for clients and
   # servers below. This can be overridden per component.
@@ -168,7 +170,7 @@ client:
 
   # grpc should be set to true if the gRPC listener should be enabled.
   # This should be set to true if connectInject is enabled.
-  grpc: false
+  grpc: true
 
   # Resource requests, limits, etc. for the client cluster placement. This
   # should map directly to the value of the resources field for a PodSpec,
